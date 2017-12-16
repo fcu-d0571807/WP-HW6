@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src='jQuery.js'></script>
+        <title></title>
+        <script>
+            $(function(){
+
+            });
+        </script>
+    </head>
+    <body>
+        <p>請選擇學院：</p>
+        <select id='college'>
+            <option value="None">未選擇</option>
+            <option value="business">商學院</option>
+            <option value="technology">工學院</option>
+            <option value="construction">建設學院</option>
+            <option value="finance">金融學院</option>
+            <option value="international">國際科技與管理學院</option>
+            <option value="information">資電學院</option>
+            <option value="human">人文社會學院</option>
+            <option value="science">理學院</option>
+        </select>
+        <p>當你選擇學院後，下列選單會列出屬於該學院的所有科系：</p>
+        <select id='department'>
+        </select>
+        <script>
+            $('#college').change(function(){
+                switch ($(this).val()) {
+                    case "None":
+                        $("#department option").remove();
+                        break;
+                    case "business":
+                        $("#department option").remove();
+                        var array = ['未選擇','會計學系','國際經營與貿易學系','國際經營與貿易學系國際企業管理全英語學士班',
+                            '財稅學系','合作經濟暨社會事業經營學系','統計學系','經濟學系','企業管理學系','行銷學系'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "technology":
+                        $("#department option").remove();
+                        var array = ['未選擇','機械與電腦輔助工程學系','纖維與複合材料學系','工業工程與系統管理學系',
+                            '化學工程學系','航太與系統工程學系','精密系統設計學士學位學程'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "construction":
+                        $("#department option").remove();
+                        var array = ['未選擇','土木工程學系','水利工程與資源保育學系','都市計畫與空間資訊學系','運輸與物流學系',
+                            '土地管理學系'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "finance":
+                        $("#department option").remove();
+                        var array = ['未選擇','風險管理與保險學系','財務金融學系','財務工程與精算學士學位學程'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "international":
+                        $("#department option").remove();
+                        var array = ['未選擇','澳洲墨爾本皇家理工大學商學與創新雙學士學位學程','美國聖荷西州立大學商學大數據分析雙學士學位學程',
+                            '美國普渡大學電機資訊雙學士學位學程'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "information":
+                        $("#department option").remove();
+                        var array = ['未選擇','資訊工程學系','電機工程學系','電子工程學系','自動控制工程學系'
+                            ,'通訊工程學系','資電不分系榮譽班'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "human":
+                        $("#department option").remove();
+                        var array = ['未選擇','中國文學系','外國語文學系'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    case "science":
+                        $("#department option").remove();
+                        var array = ['未選擇','應用數學系','環境工程與科學學系','材料科學與工程學系','光電學系'];
+                        $.each(array,function(i, val){
+                            $('#department').append($("<option>"+array[i]+"</option>"))
+                        });
+                        break;
+                    default:
+                }
+            });
+        </script>
+    </body>
+</html>
